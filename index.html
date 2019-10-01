@@ -12,64 +12,7 @@
 	</style>
 </head>
 <body>
-	<template id="todo-list">
-		<h1>Todo List</h1>
-		<todo-form></todo-form>
-		<ul id="todos">
-			<slot name="todos"></slot>
-		</ul>
-	</template>
-	<template id="todo-form">
-		<style>
-			fieldset {
-				border: 1px solid #ccc;
-			}
-			fieldset > * {
-				box-sizing: border-box;
-				display: block;
-				margin: 1rem 0;
-				padding: 10px;
-				font: normal 16px Arial, sans-serif;
-			}
-			fieldset > input, fieldset > textarea {
-				width: 50%;
-				border: 1px solid #ccc;
-				border-radius: 3px;
-			}
-			fieldset > button {
-				background: #eee;
-				border: 1px solid #ccc;
-				padding: 5px 10px;
-			}
-		</style>
-		<fieldset>
-			<input type="text" id="title">
-			<textarea id="description"></textarea>
-			<button type="button" id="save-btn">Save</button>
-		</fieldset>
-	</template>
-	<template id="todo-item">
-		<style>
-			.todo__title {
-				font-weight: 600;
-			}
-			.todo__title:after {
-				content: " - ";
-			}
-		</style>
-		<li>
-			<span class="todo__title"><slot name="title"></slot></span>
-			<slot name="description"></slot>
-			<input type="checkbox" id="done">Done
-		</li>
-	</template>
-
-	<todo-list>
-		<!-- <todo-item slot="todos">
-			<span slot="title">Make slideshow</span>
-			<span slot="description">Need slides for shop talk on web components</span>
-		</todo-item> -->
-	</todo-list>
+	<todo-list></todo-list>
 	<script async type="module" src="assets/js/TodoApp.js"></script>
 </body>
 </html>
