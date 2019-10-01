@@ -28,7 +28,7 @@ export default class TodoForm extends HTMLElement {
 			</style>
 			<div id="todo-form">
 				<fieldset>
-					<input type="text" id="title" placeholder="Title">
+					<input type="text" id="title" placeholder="Title (required)">
 					<textarea id="description" placeholder="Description"></textarea>
 					<button type="button" id="save-btn">Save</button>
 				</fieldset>
@@ -50,9 +50,7 @@ export default class TodoForm extends HTMLElement {
 		const title = this.titleInput.value || '';
 		const description = this.descInput.value || '';
 
-		if (title == '' || description == '') {
-			return false;
-		}
+		if (title == '') return false;
 
 		this.dispatchEvent(new CustomEvent('saveTodo', {
 			bubbles: true,
